@@ -21,7 +21,8 @@ app.use(session({
 const flash = require('express-flash');
 app.use(flash());
 // static content
-app.use(express.static(path.join(__dirname, "./static")));
+// app.use(express.static(path.join(__dirname, './public/dist')));
+app.use(express.static( __dirname + '/public/dist/public' ));
 // setting up ejs and our views folder
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'ejs');
