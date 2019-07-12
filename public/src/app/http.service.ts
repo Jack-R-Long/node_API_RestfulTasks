@@ -13,6 +13,9 @@ export class HttpService {
      return this._http.get('/tasks')
      
    }
+   getTaskInfo(id){
+     return this._http.get('/tasks/'+id)
+   }
   //  getTasksID(){
   //    let tempObservable = this._http.get('tasks/5d264365f8b95b63f45d1181')
   //    tempObservable.subscribe((data) => {

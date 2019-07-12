@@ -1,19 +1,30 @@
  <!--The content below is only a placeholder and can be replaced.-->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<div style="text-align:center">
+<div class="container border rounded text-center">
   <h1>
-    Welcome to {{ title }}!
+    Restful Tasks API! 
   </h1>
   <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
   <br>
-  <h4>All the Tasks</h4>
-  <ul *ngFor="let task of tasks">
-    <li >Title: {{task.title}} -- Description: {{task.description}}</li>
-  </ul>
-  <h4>The Second Task</h4>
-  <ul *ngFor="let task of tasks">
-    <li *ngIf="task.description == 'blah'"> Title: {{task.title}} -- Description: {{task.description}}</li>
-  </ul>
+  <button type="button" class="btn btn-danger" (click)="onClick()">Show Tasks</button>
+  <div class="container" *ngIf="tasks.length > 0">
+    <div class="container border border-danger rounded mb-4 mt-2" *ngFor="let task of tasks">
+      <div class="row mt-2">
+        <div class="col">
+          <h5>Title: {{task.title}} </h5>          
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-info" (click)="showInfo(task)">Show Info</button>
+        </div>
+      </div>
+      <br>
+    </div>
+    <div class="container border border-info rounded mb-4 mt-2" *ngIf="is_tasks">
+      <p>Title: {{task_info.title}}</p>
+      <p>Description: {{task_info.description}}</p>
+    </div>
+  </div>
 </div>
+
 
 
