@@ -4,10 +4,12 @@ import {HttpService} from './http.service';
 import {HttpClientModule} from '@angular/common/http'
 
 import { AppComponent } from './app.component';
+import { ShowInfoComponent } from './show-info/show-info.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShowInfoComponent
   ],
   imports: [
     BrowserModule,

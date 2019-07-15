@@ -19,10 +19,11 @@
       </div>
       <br>
     </div>
-    <div class="container border border-info rounded mb-4 mt-2" *ngIf="is_tasks">
+    <app-show-info [tasktoShow]='task_info' [is_tasks]='is_tasks'></app-show-info>
+    <!-- <div class="container border border-info rounded mb-4 mt-2" *ngIf="is_tasks">
       <p>Title: {{task_info.title}}</p>
       <p>Description: {{task_info.description}}</p>
-    </div>
+    </div> -->
   </div>
 </div>
 

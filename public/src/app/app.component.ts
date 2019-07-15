@@ -23,7 +23,7 @@ export class AppComponent {
     observable.subscribe(data =>{
       console.log("Got tasks from service")
       console.log(data)
-      this.tasks = data['data']
+      this.tasks = data['data'] 
     })
   }
   onClick(): void{
@@ -36,8 +36,8 @@ export class AppComponent {
     let observable = this._httpService.getTaskInfo(task_id)
     observable.subscribe(data =>{
       console.log("Got individual task info!")
-      console.log(data.data)
-      this.task_info = data.data
+      console.log(data['data'])
+      this.task_info = data['data']
       this.is_tasks = true
     })
   }
